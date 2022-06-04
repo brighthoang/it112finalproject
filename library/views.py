@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Books, Movies, Music
 from django.urls import reverse_lazy
 from .forms import BooksForm, MoviesForm, MusicForm
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request, 'library/index.html')
@@ -37,6 +38,7 @@ def musicDetail(request, id):
     return render(request, 'library/musicdetail.html', {'music': music})
 
 
+@login_required
 def newBooks(request):
     form = BooksForm
 
@@ -51,6 +53,7 @@ def newBooks(request):
     return render(request, 'library/newbooks.html', {'form': form})
 
 
+@login_required
 def newMovies(request):
     form = MoviesForm
 
@@ -65,6 +68,7 @@ def newMovies(request):
     return render(request, 'library/newmovies.html', {'form': form})
 
 
+@login_required
 def newMusic(request):
     form = MusicForm
 
@@ -77,3 +81,10 @@ def newMusic(request):
     else:
         form = MusicForm()
     return render(request, 'library/newmusic.html', {'form': form})
+
+
+def loginmessage(request):
+    return render(request, 'library/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'library/logoutmessage.html') 

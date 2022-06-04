@@ -12,4 +12,6 @@ urlpatterns = [
     path('newbooks/', views.newBooks, name='newbooks'),
     path('newmovies/', views.newMovies, name='newmovies'),
     path('newmusic/', views.newMusic, name='newmusic'),
+    path('loginmessage/', views.loginmessage, name='loginmessage'),
+    path('logoutmessage/', views.logoutmessage, name='logoutmessage'),
 ] 
