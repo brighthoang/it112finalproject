@@ -3,7 +3,7 @@
 <h2>Music</h2>
 <ul>
     {% for x in music_list %}
-        <li>{{ x.song_title }}</li>
+        <li><a href="{% url 'musicdetail' id=x.id %}">  {{ x.song_title }}</a></li>
     {% endfor %}
 </ul>
 
