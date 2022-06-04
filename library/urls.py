@@ -9,4 +9,7 @@ urlpatterns = [
     path('booksdetail/<int:id>', views.booksDetail, name="booksdetail"),
     path('moviesdetail/<int:id>', views.moviesDetail, name="moviesdetail"),
     path('musicdetail/<int:id>', views.musicDetail, name="musicdetail"),
+    path('newbooks/', views.newBooks, name='newbooks'),
+    path('newmovies/', views.newMovies, name='newmovies'),
+    path('newmusic/', views.newMusic, name='newmusic'),
 ] 
